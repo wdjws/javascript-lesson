@@ -1,3 +1,5 @@
+// 基礎編
+
 // Q1 変数
 let nickname = 'ジュン';
 let age = 28;
@@ -93,3 +95,49 @@ remainder(5, 3);
 // Q10 スコープ
 // fooという関数の中で、変数xが定義されているローカル変数のため、
 // 関数fooの中でしか参照することができない、スコープの対象外であるため。
+
+
+// 応用編
+
+// Q1 標準組み込みオブジェクト
+let random = Math.floor(Math.random() * 10);
+console.log(random);
+
+// Q2 コールバック関数
+function delayGreet() {
+  console.log('Hello World!');
+}
+setTimeout(delayGreet, 3000);
+
+// Q3 if
+let num = 0;
+if (num === 0) {
+  console.log('num is 0');
+} else if (num > 0) {
+  console.log('num is greater than 0');
+} else if (num < 0) {
+  console.log('num is less than 0');
+}
+
+// Q4 for
+let numbers = [];
+for (let i = 0; i <= 99; i++) {
+  numbers[i] = i;
+}
+console.log(numbers);
+
+// Q5 for × if
+let mixed = [4, '2', 5, '8', '9', 0, 1];
+
+for (let i = 0; i < mixed.length; i++) {
+  let data = mixed[i];
+  if (typeof data === 'number') {
+    if(data % 2 === 0 ) {
+      console.log('even');
+    } else {
+      console.log('odd');
+    }
+  } else {
+    console.log('not number');
+  }
+}
