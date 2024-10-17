@@ -85,7 +85,7 @@ calc.divide = function(x, y) {
 calc.divide(15, 3);
 
 // Q9 返り値
-function remainder(x, y){
+function remainder(x, y) {
   let number = x % y;
   console.log(x + 'を' + y + 'で割った余りは' + number + 'です。');
   return number;
