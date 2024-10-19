@@ -42,7 +42,7 @@ console.log(playerList[1].favorites[1]);
 
 // Q5 四則演算
 let playerAgeTotal = playerList[0].age + playerList[1].age + playerList[2].age;
-console.log(playerAgeTotal / 3);
+console.log(playerAgeTotal / playerList.length);
 
 // Q6 関数
 function sayHello() {
@@ -85,12 +85,15 @@ calc.divide = function(x, y) {
 calc.divide(15, 3);
 
 // Q9 返り値
+let x = 5;
+let y = 3;
+
 function remainder(x, y) {
   let number = x % y;
-  console.log(x + 'を' + y + 'で割った余りは' + number + 'です。');
   return number;
 }
-remainder(5, 3);
+
+console.log(x + 'を' + y + 'で割った余りは' + remainder(x, y) + 'です。');
 
 // Q10 スコープ
 // fooという関数の中で、変数xが定義されているローカル変数のため、
@@ -111,18 +114,18 @@ setTimeout(delayGreet, 3000);
 
 // Q3 if
 let num = 0;
-if (num === 0) {
-  console.log('num is 0');
-} else if (num > 0) {
+if (num > 0) {
   console.log('num is greater than 0');
 } else if (num < 0) {
   console.log('num is less than 0');
+} else {
+  console.log('num is 0');
 }
 
 // Q4 for
 let numbers = [];
 for (let i = 0; i <= 99; i++) {
-  numbers[i] = i;
+  numbers.push(i);
 }
 console.log(numbers);
 
@@ -131,13 +134,9 @@ let mixed = [4, '2', 5, '8', '9', 0, 1];
 
 for (let i = 0; i < mixed.length; i++) {
   let data = mixed[i];
-  if (typeof data === 'number') {
-    if(data % 2 === 0 ) {
-      console.log('even');
-    } else {
-      console.log('odd');
-    }
-  } else {
+  if (typeof data !== 'number') {
     console.log('not number');
-  }
+    } else {
+      console.log(data % 2 === 0 ? 'even' : 'odd');
+    }
 }
