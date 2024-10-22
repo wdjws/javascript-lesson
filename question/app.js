@@ -41,7 +41,10 @@ let playerList = [
 console.log(playerList[1].favorites[1]);
 
 // Q5 四則演算
-let playerAgeTotal = playerList[0].age + playerList[1].age + playerList[2].age;
+let playerAgeTotal = 0;
+for (let i = 0; i < playerList.length; i++) {
+  playerAgeTotal += playerList[i].age;
+}
 console.log(playerAgeTotal / playerList.length);
 
 // Q6 関数
